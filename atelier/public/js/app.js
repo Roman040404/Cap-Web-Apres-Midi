@@ -1,16 +1,37 @@
+import { validateMessage, replyTo } from './brain.js';
+
 const formulaire = document.querySelector('#chat-form');
 const statut = document.querySelector('#status');
 const versionElt = document.querySelector('#version');
+const champ = document.querySelector('#message');
+const liste = document.querySelector('#messages');
 
-// J1 : interface seule, on bloque l’envoi et on l’explique.
 formulaire?.addEventListener('submit', (event) => {
   event.preventDefault();
-  if (statut) {
-    statut.textContent = 'Interface prête ; les réponses arrivent au J2.';
+
+  const resultat = validateMessage(champ.value);
+
+  if (!resultat.ok) {
+    statut.textContent = resultat.error;
+    champ.focus();
+    return;
   }
+
+  const value = resultat.value;
+
+  const li = document.createElement('li');
+  li.textContent = `Vous : ${value}`;
+  liste.append(li);
+
+  const reponse = document.createElement('li');
+  reponse.textContent = `Cap Web : ${replyTo(value)}`;
+  liste.append(reponse);
+
+  champ.value = '';
+  statut.textContent = '';
+  champ.focus();
 });
 
-// Version du serveur local, échec discret si indisponible.
 fetch('/version.json', { headers: { accept: 'application/json' } })
   .then((reponse) => (reponse.ok ? reponse.json() : null))
   .then((donnees) => {
