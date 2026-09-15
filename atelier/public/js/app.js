@@ -1,10 +1,13 @@
 import { validateMessage, replyTo } from './brain.js';
+import { renderMessages } from './view.js';
 
 const formulaire = document.querySelector('#chat-form');
 const statut = document.querySelector('#status');
 const versionElt = document.querySelector('#version');
 const champ = document.querySelector('#message');
 const liste = document.querySelector('#messages');
+
+const historique = [];
 
 formulaire?.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -19,13 +22,17 @@ formulaire?.addEventListener('submit', (event) => {
 
   const value = resultat.value;
 
-  const li = document.createElement('li');
-  li.textContent = `Vous : ${value}`;
-  liste.append(li);
+  historique.push({
+    role: 'user',
+    text: value
+  });
 
-  const reponse = document.createElement('li');
-  reponse.textContent = `Cap Web : ${replyTo(value)}`;
-  liste.append(reponse);
+  historique.push({
+    role: 'assistant',
+    text: replyTo(value)
+  });
+
+  renderMessages(historique, liste);
 
   champ.value = '';
   statut.textContent = '';

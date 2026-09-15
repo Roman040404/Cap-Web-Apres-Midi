@@ -38,3 +38,10 @@ export function renderMessages(messages, container) {
 **Dans le suivi** : le rôle de chaque fichier, en une phrase chacun.
 
 Suivant : [TP10](10-memoire.md)
+
+J'ai prédit : Que nous allions séparer l'affichage des messages dans un fichier dédié et conserver la conversation dans un tableau.
+Nous avons fait : Nous avons créé view.js pour gérer l'affichage des messages, modifié app.js pour gérer l'historique et modifié le serveur pour autoriser view.js.
+J'ai observé : Le comportement de Cap Web reste identique au TP08, mais les messages sont maintenant stockés dans un tableau avec leur rôle.
+J'ai compris : brain.js contient les règles de réponse, view.js s'occupe de l'affichage et app.js fait le lien entre les deux.
+Je n'ai pas compris :
+Réponse à la question « Dans le suivi » du TP : brain.js gère la logique de réponse, view.js gère l'affichage des messages et app.js gère les événements et l'historique de la conversation.

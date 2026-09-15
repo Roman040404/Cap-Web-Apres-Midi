@@ -46,5 +46,5 @@ J'ai prédit : Que nous allions séparer la logique du cerveau de Cap Web du res
 Nous avons fait : Nous avons créé brain.js avec les fonctions validateMessage et replyTo, puis nous les avons importées dans app.js. Nous avons aussi modifié le serveur pour autoriser l'accès à brain.js.
 J'ai observé : Cap Web reconnaît salut, bonjour, aide et test, et donne une réponse différente pour ces messages. Pour un message inconnu, il donne une réponse par défaut.
 J'ai compris : Un module JavaScript permet de séparer le code en plusieurs fichiers et d'utiliser des fonctions avec export et import. J'ai aussi compris que le cerveau ne doit pas utiliser document car il doit rester indépendant de la page.
-Je n'ai pas compris : Je n'ai pas encore totalement compris comment les modules JavaScript sont chargés par le navigateur.
+Je n'ai pas compris :
 Réponse à la question « Dans le suivi » du TP : Séparer le cerveau dans brain.js permet de tester et réutiliser les règles sans dépendre de l'interface HTML.

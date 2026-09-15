@@ -46,5 +46,5 @@ J'ai prédit : Que nous allions repartir de notre atelier fonctionnel et prépar
 Nous avons fait : Nous avons récupéré l'atelier, créé le dépôt Git avec la branche main, ajouté les fichiers et fait un premier commit.
 J'ai observé : Le serveur fonctionne avec npm start et la page Cap Web s'affiche correctement.
 J'ai compris : Git permet de sauvegarder les différentes étapes du projet et de revenir à un état précédent si nécessaire.
-Je n'ai pas compris : Je n'ai pas encore totalement compris toutes les commandes Git, notamment la différence entre git add et git commit.
+Je n'ai pas compris :
 Réponse à la question « Dans le suivi » du TP : Le point de départ est fonctionnel et le projet est maintenant suivi avec Git.

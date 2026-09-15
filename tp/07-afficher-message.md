@@ -47,5 +47,5 @@ dans le formulaire et l'afficher dans la liste.
 Nous avons fait : Nous avons récupéré le champ du formulaire et la liste des messages, vérifié que le message n'est pas vide, puis créé un élément li pour afficher le message.
 J'ai observé : Le message apparaît dans la liste après avoir cliqué sur « Envoyer » et le champ est ensuite vidé.
 J'ai compris : textContent permet d'afficher le texte saisi sans interpréter du HTML. Par exemple, <b>gras</b> reste affiché comme du texte.
-Je n'ai pas compris : Je n'ai pas encore totalement compris toutes les différences entre les méthodes de manipulation du DOM.
+Je n'ai pas compris :
 Réponse à la question « Dans le suivi » du TP : Il faut utiliser textContent plutôt que innerHTML pour afficher un message utilisateur afin d'éviter que du HTML saisi par l'utilisateur soit interprété.
